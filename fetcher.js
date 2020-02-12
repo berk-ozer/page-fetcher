@@ -7,7 +7,6 @@ request(requestedURL, (error, response, body) => {
   if (error) {
     console.log('Error:', error);
   } else {
-    console.log('Status Code:', response.statusCode);
-    console.log('Body:', body);
+    console.log('Downloaded and saved XXX bytes to XXX');
   }
 });
