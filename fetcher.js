@@ -6,18 +6,20 @@ const requestedURL = process.argv[2];
 const makeRequest = (saveData) => {
   request(requestedURL, (error, response, body) => {
     if (error) {
-      console.log('Error:', error);
+      console.log(error);
     } else {
       saveData(body);
-      console.log('Downloaded and saved XXX bytes to XXX');
     }
   });
 };
 
 const writeToFile = (data) => {
   fs.writeFile('./index.html', data, (err) => {
-    if (err) throw err;
-    console.log('File has been saved!');
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Downloaded and saved XXX bytes to XXX');
+    }
   })
 };
 
