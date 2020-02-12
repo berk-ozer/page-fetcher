@@ -10,3 +10,10 @@ request(requestedURL, (error, response, body) => {
     console.log('Downloaded and saved XXX bytes to XXX');
   }
 });
+
+const data = 'dsgsdgsdgsdg';
+
+fs.writeFile('./message.txt', data, (err) => {
+  if (err) throw err;
+  console.log('File has been saved!');
+})
