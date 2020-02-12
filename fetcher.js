@@ -2,6 +2,7 @@ const request = require('request');
 const fs = require('fs');
 
 const requestedURL = process.argv[2];
+const toThisPath = process.argv[3];
 
 const makeRequest = (saveData) => {
   request(requestedURL, (error, response, body) => {
@@ -14,11 +15,11 @@ const makeRequest = (saveData) => {
 };
 
 const writeToFile = (data) => {
-  fs.writeFile('./index.html', data, (err) => {
+  fs.writeFile(toThisPath, data, (err) => {
     if (err) {
       console.log(err);
     } else {
-      console.log('Downloaded and saved XXX bytes to XXX');
+      console.log(`Downloaded and saved XXX bytes to ${toThisPath}`);
     }
   })
 };
