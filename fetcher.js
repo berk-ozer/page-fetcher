@@ -1,7 +1,9 @@
 const request = require('request');
 const fs = require('fs');
 
-request('http://www.google.com', (error, response, body) => {
+const requestedURL = process.argv[2];
+
+request(requestedURL, (error, response, body) => {
   if (error) {
     console.log('Error:', error);
   } else {
