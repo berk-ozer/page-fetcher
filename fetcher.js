@@ -30,7 +30,7 @@ const writeToFile = (data) => {
     } else {
       console.log(`Downloaded and saved ${fs.statSync(toThisPath).size} bytes to ${toThisPath}`);
     }
-  })
+  });
 };
 
 makeRequest(writeToFile);
